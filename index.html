@@ -527,13 +527,14 @@ const STOCKS=[
 ];
 
 const CANDIDATES=[
-  {t:'MRVL',n:'Marvell Tech',iv:68,ivr:68,credit:8.00,maxRisk:12.00,rr:0.67,prob:67,legs:['Sell Put $280','Buy Put $260','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 70 — קרוב לקניית יתר, המתן לירידה קלה. MACD Bull. Elder Bull. Fib 23.6%. ספרד $20. 40 DTE.'},
-  {t:'XLF',n:'Finance ETF',iv:18,ivr:18,credit:1.40,maxRisk:3.60,rr:0.39,prob:65,legs:['Sell Put $50','Buy Put $45','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 56. MACD Bull. Elder Bull. Fib 38.2%. Finance ETF יציב. ספרד $5. 40 DTE.'},
-  {t:'AMGN',n:'Amgen',iv:28,ivr:28,credit:5.60,maxRisk:14.40,rr:0.39,prob:60,legs:['Sell Put $320','Buy Put $300','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 57. MACD Bull. Elder Bull. Fib 61.8% — תמיכה חלשה, זהירות. ספרד $20. 40 DTE.'},
-  {t:'MNDY',n:'Monday.com',iv:52,ivr:52,credit:3.50,maxRisk:6.50,rr:0.54,prob:65,legs:['Sell Put $80','Buy Put $70','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 56. MACD Bull. Elder Bull. Fib 61.8%. ישראל — בדוק נזילות. ספרד $10. 40 DTE.'},
-  {t:'OKTA',n:'Okta',iv:55,ivr:55,credit:3.50,maxRisk:6.50,rr:0.54,prob:66,legs:['Sell Put $110','Buy Put $100','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 63. MACD Bull. Elder Bull. Fib 38.2%. ללא Earnings. בדוק נזילות ב-OptionStrat. 40 DTE.'},
-  {t:'SPOT',n:'Spotify',iv:45,ivr:45,credit:7.00,maxRisk:13.00,rr:0.54,prob:60,legs:['Sell Put $460','Buy Put $440','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 57. MACD Bull. Elder Bull. Fib 38.2%. בדוק נזילות. ספרד $20. 40 DTE.'},
-  {t:'ROST',n:'Ross Stores',iv:45,ivr:45,credit:3.50,maxRisk:6.50,rr:0.54,prob:65,legs:['Sell Put $210','Buy Put $200','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 53. MACD Bull. Elder Bull. Fib 23.6%. ללא Earnings. Retail יציב. 40 DTE.'}
+  {t:'XLF',n:'Finance ETF',iv:18,ivr:18,credit:1.40,maxRisk:3.60,rr:0.39,prob:65,strat:'Bull Put Spread',legs:['Sell Put $50','Buy Put $45','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 56. MACD Bull. Elder Bull. Fib 38.2%. שוק בתיקון — Strike 8% OTM. Finance ETF יציב.'},
+  {t:'OKTA',n:'Okta',iv:55,ivr:55,credit:3.50,maxRisk:6.50,rr:0.54,prob:66,strat:'Bull Put Spread',legs:['Sell Put $108','Buy Put $98','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 63. MACD Bull. Elder Bull. Fib 38.2%. שוק בתיקון — Strike 8% OTM.'},
+  {t:'AMGN',n:'Amgen',iv:28,ivr:28,credit:5.60,maxRisk:14.40,rr:0.39,prob:60,strat:'Bull Put Spread',legs:['Sell Put $318','Buy Put $298','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 57. MACD Bull. Elder Bull. שוק בתיקון — Strike 8% OTM.'},
+  {t:'ROST',n:'Ross Stores',iv:45,ivr:45,credit:3.50,maxRisk:6.50,rr:0.54,prob:65,strat:'Bull Put Spread',legs:['Sell Put $210','Buy Put $200','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 53. MACD Bull. Elder Bull. Fib 23.6%. Retail יציב.'},
+  {t:'SPOT',n:'Spotify',iv:45,ivr:45,credit:7.00,maxRisk:13.00,rr:0.54,prob:60,strat:'Bull Put Spread',legs:['Sell Put $464','Buy Put $444','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 57. MACD Bull. Elder Bull. Fib 38.2%. שוק חלש — Strike 8% OTM.'},
+  {t:'MRVL',n:'Marvell Tech',iv:68,ivr:68,credit:8.00,maxRisk:12.00,rr:0.67,prob:67,strat:'Bull Put Spread',legs:['Sell Put $271','Buy Put $251','18 יול 2026'],exp:'18 יול',earn:'לאחר אוג',rationale:'RSI 70 — קרוב לקניית יתר. MACD Bull. Elder Bull. המתן לירידה קלה.'},
+  {t:'NFLX',n:'Netflix',iv:55,ivr:55,credit:4.50,maxRisk:5.50,rr:0.82,prob:62,strat:'Bear Call Spread',legs:['Sell Call $88','Buy Call $93','18 יול 2026'],exp:'18 יול',earn:'15 יול',rationale:'RSI 33. MACD Bear. Elder Bear. מתחת MA50. Earnings 15 יול — זהירות.'},
+  {t:'META',n:'Meta Platforms',iv:42,ivr:42,credit:6.00,maxRisk:14.00,rr:0.43,prob:60,strat:'Bear Call Spread',legs:['Sell Call $616','Buy Call $636','18 יול 2026'],exp:'18 יול',earn:'23 יול',rationale:'RSI 40. MACD Bear. Elder Bear. מתחת MA50. Sell Call מעל המחיר.'}
 ];
 
 // ── State ──
@@ -1153,7 +1154,7 @@ function renderTop7(){
     html+='<div class="t7-met"><div class="lbl">Elder'+(tech?'●live':'')+'</div><div class="val green">'+(tech?tech.elder:'Bull')+'</div></div>';
     html+='<div class="t7-met"><div class="lbl">פיב</div><div class="val blue">'+(tech?tech.fib:'23.6%')+'</div></div>';
     html+='</div>';
-    html+='<div class="strat-box"><div class="strat-title">אסטרטגיה: Bull Put Spread | פקיעה: '+s.exp+' 2026</div>';
+    html+='<div class="strat-box"><div class="strat-title">אסטרטגיה: '+(s.strat||'Bull Put Spread')+' | פקיעה: '+s.exp+' 2026</div>';
     html+='<div class="legs">';
     s.legs.forEach(function(l,j){html+='<span class="leg '+(j===0?'leg-s':j===1?'leg-b':'leg-exp')+'">'+l+'</span>';});
     html+='</div></div>';
