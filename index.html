@@ -517,26 +517,22 @@ const CANDIDATES=[
 
 // ── State ──
 function loadState(){
-  const POSITIONS=[
+  // Default positions - always visible
+  var DEFAULT=[
     {id:1,ticker:'ASTS',strat:'Bull Put Spread',sell:110,buy:95,prem:8.36,cont:3,exp:'2026-07-17',stop:95,optPrice:null,stockPrice:null,pending:false,macd:'Bull',elder:'Bull',fib:'23.6%',rsi:62},
     {id:2,ticker:'RKLB',strat:'Cash Secured Put',sell:115,buy:null,prem:16.45,cont:1,exp:'2026-07-17',stop:105,optPrice:null,stockPrice:null,pending:false,macd:'Bull',elder:'Bull',fib:'23.6%',rsi:58},
-    {id:3,ticker:'AMZN',strat:'Risk Reversal + Bull Put Spread',sell:275,buy:240,prem:null,cont:2,exp:'2026-07-17',stop:250,optPrice:null,stockPrice:null,pending:true,notes:'ממתין לפרמיות',macd:'Neut',elder:'Neut',fib:'23.6%',rsi:55},
+    {id:3,ticker:'AMZN',strat:'Risk Reversal + Bull Put Spread',sell:275,buy:240,prem:null,cont:2,exp:'2026-07-17',stop:250,optPrice:null,stockPrice:null,pending:true,macd:'Neut',elder:'Neut',fib:'23.6%',rsi:55}
   ];
-  // Try localStorage for saved state with trades/updates
-  for(const key of ['otp_v7','otp_v6','otp_v5']){
-    try{
-      const raw=localStorage.getItem(key);
-      if(!raw)continue;
-      const p=JSON.parse(raw);
-      // Only use saved state if it has real positions
+  try{
+    var raw=localStorage.getItem('otp_v7');
+    if(raw){
+      var p=JSON.parse(raw);
       if(p&&p.positions&&p.positions.length>0){
-        // Merge: keep saved positions but ensure our 3 always exist
         return{positions:p.positions,trades:p.trades||[],scanAlerts:[]};
       }
-    }catch(e){}
-  }
-  // Default: always show our 3 positions
-  return{positions:POSITIONS,trades:[],scanAlerts:[]};
+    }
+  }catch(e){}
+  return{positions:DEFAULT,trades:[],scanAlerts:[]};
 }
 let state=loadState();
 function save(){
